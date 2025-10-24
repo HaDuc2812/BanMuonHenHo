@@ -1,0 +1,95 @@
+
+<html>
+    <%@ page contentType="text/html;charset=UTF-8" %>
+    <head>
+        <title>Find Your Match</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-gray-50 font-sans text-gray-800">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="text-2xl font-bold text-pink-600">
+                    Find Your Match
+                </div>
+                <div class="space-x-4">
+                    <a href="login.jsp" class="text-gray-700 hover:text-pink-600">Login</a>
+                    <a href="register.jsp" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg">Sign Up</a>
+                    <a href="admindashboard">Admin</a>               
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="text-center py-16 bg-gradient-to-r from-pink-100 to-pink-300">
+            <h1 class="text-4xl md:text-5xl font-bold text-pink-700 mb-4">
+                Connect With Real People. Find Your Match Today.
+            </h1>
+            <p class="text-lg text-gray-700 mb-6">
+                Thousands of members have already met their partners through Find Your Match.
+            </p>
+            <a href="match.jsp" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg text-lg font-semibold">
+                Start Matching
+            </a>
+        </section>
+
+        <!-- Featured Users -->
+        <section class="max-w-6xl mx-auto py-12 px-4">
+            <h2 class="text-3xl font-bold text-center text-pink-600 mb-10">Featured Members</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-full h-60 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">Linh, 25</h3>
+                        <p class="text-gray-500">Enjoys traveling and reading</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" class="w-full h-60 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">Minh, 27</h3>
+                        <p class="text-gray-500">Interested in sports and music</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/women/29.jpg" class="w-full h-60 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">Phuong, 24</h3>
+                        <p class="text-gray-500">Likes cooking and watching movies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="bg-pink-100 py-12">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-pink-700 mb-8">Success Stories</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white shadow-md rounded-xl p-6">
+                        <p class="text-gray-600 italic">
+                            “Thanks to Find Your Match, we met each other and are now engaged. We couldn’t be happier.”
+                        </p>
+                        <p class="mt-4 font-semibold text-pink-600">– Tuan & Mai</p>
+                    </div>
+                    <div class="bg-white shadow-md rounded-xl p-6">
+                        <p class="text-gray-600 italic">
+                            “This platform made it possible for us to connect and build a real relationship. Thank you.”
+                        </p>
+                        <p class="mt-4 font-semibold text-pink-600">– An & Hanh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-pink-600 text-white text-center py-6 mt-12">
+            <p>&copy; 2025 Find Your Match | All rights reserved.</p>
+            <p class="text-sm mt-2">Contact: support@findyourmatch.com</p>
+        </footer>
+    </body>
+</html>

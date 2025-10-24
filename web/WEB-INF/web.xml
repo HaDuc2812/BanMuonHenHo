@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>MatchServlet</servlet-name>
+        <servlet-class>controller.ListMatchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsersListController</servlet-name>
+        <servlet-class>controller.UsersListController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <servlet-class>controller.AdminDashboardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MatchAddServlet</servlet-name>
+        <servlet-class>controller.MatchAddServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateMatchServlet</servlet-name>
+        <servlet-class>controller.CreateMatchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MatchServlet</servlet-name>
+        <url-pattern>/Match</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsersListController</servlet-name>
+        <url-pattern>/Userlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <url-pattern>/admindashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MatchAddServlet</servlet-name>
+        <url-pattern>/MatchAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateMatchServlet</servlet-name>
+        <url-pattern>/creatematch</url-pattern>
+    </servlet-mapping>
+</web-app>
