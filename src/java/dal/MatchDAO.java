@@ -51,6 +51,8 @@ public class MatchDAO extends DBContext {
                 m.setAdminId(rs.getInt("admin_id"));
                 m.setMatchDate(rs.getTimestamp("match_date"));
                 m.setStatus(rs.getString("status"));
+                
+                
                 list.add(m);
             }
         } catch (SQLException e) {

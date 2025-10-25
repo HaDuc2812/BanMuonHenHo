@@ -81,7 +81,7 @@ public class CreateMatchServlet extends HttpServlet {
             // 2️⃣ Get current admin ID (from session or hardcode for now)
             //HttpSession session = request.getSession();
             //Integer adminId = (Integer) session.getAttribute("adminId");
-           // 2️⃣ Hardcode admin ID for now (since no session)
+            // 2️⃣ Hardcode admin ID for now (since no session)
             int adminId = 1; // Change this to match your actual admin ID
 
             // 3️⃣ Create a new match object
@@ -98,13 +98,15 @@ public class CreateMatchServlet extends HttpServlet {
             // 5️⃣ Forward or redirect with message
             if (success) {
                 request.setAttribute("successMessage", "Match created successfully!");
+
             } else {
                 request.setAttribute("errorMessage", "Failed to create match. Please try again.");
             }
+            request.getRequestDispatcher("/views/AdminDashboard.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("errorMess", "error creating match");
-            request.getRequestDispatcher("/views/MatchPopup.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/AdminDashboard.jsp").forward(request, response);
         }
     }
 

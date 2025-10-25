@@ -160,4 +160,19 @@ public class UsersDAO extends DBContext {
 
         return list;
     }
+    public String getUserNameById(int userId){
+        String userName = null;
+        String sql = "select u.full_name from Users u where u.user_id = ?";
+        try{
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                userName = rs.getString("full_name");
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return userName;
+    }
 }

@@ -23,19 +23,19 @@
                 <div>
                     <div class="card">
                         <h2>Total Users</h2>
-                        <p>0</p> <!-- Placeholder, populate from servlet -->
+                        <p>${totalUsers}</p> <!-- Placeholder, populate from servlet -->
                     </div>
                     <div class="card">
                         <h2>Total Matches</h2>
-                        <p>0</p>
+                        <p>${totalMatches}</p>
                     </div>
                     <div class="card">
                         <h2>Pending Confirmations</h2>
-                        <p>0</p>
+                        <p>${pendingMatches}</p>
                     </div>
                     <div class="card">
                         <h2>Completed Matches</h2>
-                        <p>0</p>
+                        <p>${completedMatches}</p>
                     </div>
                 </div>
 

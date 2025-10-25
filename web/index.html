@@ -1,65 +1,87 @@
 
-<html>
-    <%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html lang="vi">
     <head>
-        <title>Find Your Match</title>
+        <meta charset="UTF-8">
+        <title>Bạn Muốn Hẹn Hò</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #333;
+            }
+            .hero {
+                background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            }
+            .card {
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            }
+        </style>
     </head>
 
-    <body class="bg-gray-50 font-sans text-gray-800">
+    <body class="font-sans text-gray-800">
         <!-- Navbar -->
         <nav class="bg-white shadow-md">
             <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div class="text-2xl font-bold text-pink-600">
-                    Find Your Match
+                    ❤️ Bạn Muốn Hẹn Hò
                 </div>
                 <div class="space-x-4">
-                    <a href="login.jsp" class="text-gray-700 hover:text-pink-600">Login</a>
-                    <a href="register.jsp" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg">Sign Up</a>
-                    <a href="admindashboard">Admin</a>               
+                    <a href="views/login.jsp" class="text-gray-700 hover:text-pink-600">Đăng nhập</a>
+                    <a href="views/register.jsp" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg">Đăng ký</a>
+                    <!--                    <a href="${pageContext.request.contextPath}/views/AdminDashboard.jsp" class="text-gray-700 hover:text-pink-600">Admin</a>-->
                 </div>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <section class="text-center py-16 bg-gradient-to-r from-pink-100 to-pink-300">
+        <section class="hero text-center py-20">
             <h1 class="text-4xl md:text-5xl font-bold text-pink-700 mb-4">
-                Connect With Real People. Find Your Match Today.
+                Kết nối với người thật. Tìm một nửa của bạn ngay hôm nay.
             </h1>
             <p class="text-lg text-gray-700 mb-6">
-                Thousands of members have already met their partners through Find Your Match.
+                Hàng ngàn người đã tìm thấy hạnh phúc của mình qua “Bạn Muốn Hẹn Hò”.
             </p>
-            <a href="match.jsp" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg text-lg font-semibold">
-                Start Matching
+            <a href="views/login.jsp" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg text-lg font-semibold">
+                Bắt đầu ngay
             </a>
         </section>
 
         <!-- Featured Users -->
         <section class="max-w-6xl mx-auto py-12 px-4">
-            <h2 class="text-3xl font-bold text-center text-pink-600 mb-10">Featured Members</h2>
+            <h2 class="text-3xl font-bold text-center text-pink-600 mb-10">Thành viên nổi bật</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="card">
                     <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-full h-60 object-cover" />
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-xl text-gray-800">Linh, 25</h3>
-                        <p class="text-gray-500">Enjoys traveling and reading</p>
+                        <p class="text-gray-500">Thích du lịch và đọc sách</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="card">
                     <img src="https://randomuser.me/api/portraits/men/22.jpg" class="w-full h-60 object-cover" />
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-xl text-gray-800">Minh, 27</h3>
-                        <p class="text-gray-500">Interested in sports and music</p>
+                        <p class="text-gray-500">Yêu thể thao và âm nhạc</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="card">
                     <img src="https://randomuser.me/api/portraits/women/29.jpg" class="w-full h-60 object-cover" />
                     <div class="p-4 text-center">
-                        <h3 class="font-bold text-xl text-gray-800">Phuong, 24</h3>
-                        <p class="text-gray-500">Likes cooking and watching movies</p>
+                        <h3 class="font-bold text-xl text-gray-800">Phương, 24</h3>
+                        <p class="text-gray-500">Đam mê nấu ăn và xem phim</p>
                     </div>
                 </div>
             </div>
@@ -68,19 +90,19 @@
         <!-- Success Stories -->
         <section class="bg-pink-100 py-12">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-pink-700 mb-8">Success Stories</h2>
+                <h2 class="text-3xl font-bold text-center text-pink-700 mb-8">Câu chuyện thành công</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white shadow-md rounded-xl p-6">
                         <p class="text-gray-600 italic">
-                            “Thanks to Find Your Match, we met each other and are now engaged. We couldn’t be happier.”
+                            “Nhờ ‘Bạn Muốn Hẹn Hò’, chúng tôi đã gặp nhau và giờ đã đính hôn. Cảm ơn chương trình rất nhiều!”
                         </p>
-                        <p class="mt-4 font-semibold text-pink-600">– Tuan & Mai</p>
+                        <p class="mt-4 font-semibold text-pink-600">– Tuấn & Mai</p>
                     </div>
                     <div class="bg-white shadow-md rounded-xl p-6">
                         <p class="text-gray-600 italic">
-                            “This platform made it possible for us to connect and build a real relationship. Thank you.”
+                            “Ứng dụng này đã giúp chúng tôi kết nối và xây dựng mối quan hệ thật sự. Rất đáng tin cậy!”
                         </p>
-                        <p class="mt-4 font-semibold text-pink-600">– An & Hanh</p>
+                        <p class="mt-4 font-semibold text-pink-600">– An & Hạnh</p>
                     </div>
                 </div>
             </div>
@@ -88,8 +110,8 @@
 
         <!-- Footer -->
         <footer class="bg-pink-600 text-white text-center py-6 mt-12">
-            <p>&copy; 2025 Find Your Match | All rights reserved.</p>
-            <p class="text-sm mt-2">Contact: support@findyourmatch.com</p>
+            <p>&copy; 2025 Bạn Muốn Hẹn Hò | Mọi quyền được bảo lưu.</p>
+            <p class="text-sm mt-2">Liên hệ: support@banmuonhenho.com</p>
         </footer>
     </body>
 </html>
