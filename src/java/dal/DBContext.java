@@ -33,16 +33,16 @@ public class DBContext {
         }
     }
 
-//    public static void main(String[] args) {
-//        // Make sure the JVM sees WEB-INF as classpath root
-//        System.setProperty("java.class.path",
-//                System.getProperty("java.class.path") + ";Web Pages/WEB-INF");
-//
-//        DBContext db = new DBContext();
-//        if (db.connection != null) {
-//            System.out.println("✅ Connected: " + db.connection);
-//        } else {
-//            System.out.println("❌ Connection is null");
-//        }
-//    }
+    public static void main(String[] args) {
+        // Make sure the JVM sees WEB-INF as classpath root
+        System.setProperty("java.class.path",
+                System.getProperty("java.class.path") + ";Web Pages/WEB-INF");
+
+        DBContext db = new DBContext();
+        if (db.connection != null) {
+            System.out.println("✅ Connected: " + db.connection);
+        } else {
+            System.out.println("❌ Connection is null");
+        }
+    }
 }

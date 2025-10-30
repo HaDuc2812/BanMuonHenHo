@@ -22,19 +22,19 @@
                 <!-- Dashboard Cards -->
                 <div>
                     <div class="card">
-                        <h2>Total Users</h2>
+                        <h2>Tổng người dùng</h2>
                         <p>${totalUsers}</p> <!-- Placeholder, populate from servlet -->
                     </div>
                     <div class="card">
-                        <h2>Total Matches</h2>
+                        <h2>Tổng các mối đã được ghép</h2>
                         <p>${totalMatches}</p>
                     </div>
                     <div class="card">
-                        <h2>Pending Confirmations</h2>
+                        <h2>Những mối đợi xác nhận</h2>
                         <p>${pendingMatches}</p>
                     </div>
                     <div class="card">
-                        <h2>Completed Matches</h2>
+                        <h2>Mối đã hoàn thành</h2>
                         <p>${completedMatches}</p>
                     </div>
                 </div>
@@ -42,16 +42,16 @@
                 <!-- Users Table -->
                 <section id="userList">
                     <div class="table-container">
-                        <h2>All Users</h2>
+                        <h2>Một số người dùng</h2>
                         <table>
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Full Name</th>
-                                    <th>Gender</th>
-                                    <th>Birth Date</th>
-                                    <th>Bio</th>
-                                    <th>Status</th>
+                                    <th>Họ tên</th>
+                                    <th>Giới tính</th>
+                                    <th>Sinh nhật</th>
+                                    <th>Mô tả</th>
+                                    <th>Trạng thái</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -115,7 +115,7 @@
                                 } else { 
                             %>
                             <tr>
-                                <td colspan="7">No matches found.</td>
+                                <td colspan="7">Không tìm thấy mối nào.</td>
                             </tr>
                             <% } %>
                         </tbody>

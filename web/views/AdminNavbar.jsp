@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/style.css">
 
     <div class="navbar">
-        <a href="<%=request.getContextPath()%>/Userlist">User List</a>
-        <a href="<%=request.getContextPath()%>/Match">Match List</a>
-        <a href="<%=request.getContextPath()%>/admindashboard">Back to dashboard</a>
+        <a href="<%=request.getContextPath()%>/Userlist">Danh sách người dùng (để ghép nối) </a>
+        <a href="<%=request.getContextPath()%>/Match">Danh sách các mối đã được ghép</a>
+        <a href="<%=request.getContextPath()%>/admindashboard">Trở về trang dashboard</a>
     </div>
 </html>

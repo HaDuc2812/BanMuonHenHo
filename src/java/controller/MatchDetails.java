@@ -1,24 +1,26 @@
+package controller;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller;
-
-import dal.UserDAO;
+import dal.MatchDAO;
+import dal.UsersDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import model.Match;
+import model.Users;
 import viewmodels.UserDetail;
 
 /**
  *
- * @author maith
+ * @author HA DUC
  */
-public class LoginController extends HttpServlet {
+public class MatchDetails extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");
+            out.println("<title>Servlet MatchDetails</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet MatchDetails at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,17 +60,30 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //processRequest(request, response);
+        try {
+            int matchId = Integer.parseInt(request.getParameter("matchId"));
 
-        // Kiểm tra xem đã đăng nhập chưa
-        HttpSession session = request.getSession();
-        UserDetail currentUser = (UserDetail) session.getAttribute("currentUser");
+            MatchDAO mdao = new MatchDAO();
+            Match match = mdao.getMatchById(matchId);
 
-        if (currentUser != null) {
-            // Đã đăng nhập rồi, chuyển thẳng đến main
-            response.sendRedirect("main");
-        } else {
-            // Chưa đăng nhập, hiển thị trang login
-            request.getRequestDispatcher("index.html").forward(request, response);
+            if (match == null) {
+                request.setAttribute("error", "Match not found");
+            } else {
+                request.setAttribute("match", match);
+
+                UsersDAO udao = new UsersDAO();
+                Users u1 = udao.getUsersById(match.getUser1Id());
+                Users u2 = udao.getUsersById(match.getUser2Id());
+                
+                request.setAttribute("user1", u1);
+                request.setAttribute("user2", u2);
+            }
+
+            request.getRequestDispatcher("/views/MatchDetail.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+
         }
     }
 
@@ -83,32 +98,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        request.setCharacterEncoding("UTF-8");
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        // Kiểm tra thông tin đăng nhập
-        UserDAO udao = new UserDAO();
-        UserDetail user = udao.getUserByUsername(username);
-
-        if (user != null && password.equals(user.getPasswordHash())) {
-            // Đăng nhập thành công
-            HttpSession session = request.getSession();
-            session.setAttribute("currentUser", user);
-
-            if(user.getRole().getRoleId() ==2){
-                response.sendRedirect("admindashboard");
-            }else{
-                response.sendRedirect("main");
-            }
-
-        } else {
-            // Đăng nhập thất bại
-            request.setAttribute("error", "Tên đăng nhập hoặc mật khẩu không đúng!");
-            request.getRequestDispatcher("views/main.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**

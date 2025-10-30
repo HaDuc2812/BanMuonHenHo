@@ -4,6 +4,7 @@
  */
 package controller;
 
+import dal.MatchDAO;
 import dal.TagDAO;
 import dal.UserDAO;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import model.Match;
 import model.Tag;
 import model.User;
 import viewmodels.UserDetail;
@@ -89,9 +91,18 @@ public class MainController extends HttpServlet {
         TagDAO tdao = new TagDAO();
         List<Tag> allTags = tdao.getAllTags();
 
+        MatchDAO mdao = new MatchDAO();
+        List<Match> pendingMatches = mdao.getPendingMatchesForUser(currentUser.getUserId());
+
+        request.setAttribute("pendingMatches", pendingMatches);
         request.setAttribute("allTags", allTags);
         request.setAttribute("user", currentUser);
+
         request.getRequestDispatcher("views/main.jsp").forward(request, response);
+        System.out.println("DEBUG - user in servlet: " + currentUser.getFullName());
+        System.out.println("DEBUG - user id: " + currentUser.getUserId());
+        System.out.println("DEBUG - pending matches: " + pendingMatches.size());
+
     }
 
     /**

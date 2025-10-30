@@ -18,16 +18,16 @@
         %>
         <table>
             <tr>
-                <th>User ID</th>
-                <th>Username</th>
-                <th>Full Name</th>
-                <th>Gender</th>
-                <th>Birth Date</th>
-                <th>Bio</th>
-                <th>Status</th>
+                <th>ID</th>
+                <th>Tên Tài Khoản</th>
+                <th>Họ Tên Người Dùng </th>
+                <th>Giới tính</th>
+                <th>Sinh nhật</th>
+                <th>Mô tả</th>
+                <th>Trạng thái</th>
                 <th>Role ID</th>
-                <th>Created At</th>
-                <th>Action</th>
+                <th>Được tạo vào lúc</th>
+                <th>Hành Động</th>
             </tr>
             <%
                 for (Users u : users) {

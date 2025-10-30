@@ -20,6 +20,14 @@
         <servlet-name>CreateMatchServlet</servlet-name>
         <servlet-class>controller.CreateMatchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MatchDetails</servlet-name>
+        <servlet-class>controller.MatchDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateMatchStatusServlet</servlet-name>
+        <servlet-class>controller.UpdateMatchStatusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MatchServlet</servlet-name>
         <url-pattern>/Match</url-pattern>
@@ -63,5 +71,13 @@
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
         <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MatchDetails</servlet-name>
+        <url-pattern>/mdetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateMatchStatusServlet</servlet-name>
+        <url-pattern>/matchupdate</url-pattern>
     </servlet-mapping>
 </web-app>
